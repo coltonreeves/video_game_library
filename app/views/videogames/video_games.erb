@@ -1,0 +1,9 @@
+<p>Hey, <%= current_user.username %>!</p>
+
+<h2>Video Games</h2>
+
+<% @video_games.each do |video_game| %>
+  <div>
+    <%= video_game.name %>
+  </div>
+  <% end %>
