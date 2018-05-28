@@ -1,7 +1,10 @@
 <h2><%= @video_game.name %></h2>
 
 
-<% #written reviews and a star/average rating at top
-# links to varying types of game content %>
+<form action="/video_games/<%=@video_game.id%>/delete" method="post">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Game">
+
+</form>
 
 <a href="/video_games/<%=@video_game.id%>/edit">Edit Video Game</a>

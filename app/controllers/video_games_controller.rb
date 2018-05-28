@@ -77,8 +77,15 @@ class VideoGamesController < ApplicationController
     end
   end
 
-
-
-
-
+  delete '/video_games/:id/delete' do
+    if logged_in?
+      @video_game = VideoGame.find_by_id(params[:id])
+      if @video_game && @video_game.user == current_user
+        @video_game.delete
+      end
+      redirect to '/video_games'
+    else
+      redirect to '/login'
+    end
+  end
 end
